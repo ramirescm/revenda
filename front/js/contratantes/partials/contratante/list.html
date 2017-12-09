@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <h3>{{vm.titulo}}</h3>
+    <p>
+        <a class="btn btn-success" href="#/contratantes/new" role="button">Novo contratante</a>
+    </p>
+    <table class="table table-striped table-hover table-responsive">
+        <tr>
+            <th>Tipo pessoa</th>
+            <th>Documento</th>
+            <th>Nome</th>
+            <th>Ramo atividade</th>
+            <th>Ativo</th>
+            <th></th>
+        </tr>
+        <tr data-ng-repeat="contratante in vm.contratantes">
+            <td>{{contratante.tipoPessoa}}</td>
+            <td>{{contratante.documento}}</td>
+            <td>{{contratante.nome}}</td>
+            <td>{{contratante.ramoAtividade.nome}}</td>
+            <td>
+                <checkbox class="{{contratante.ativo ? 'btn-success' : 'hide'}} " data-ng-model="contratante.ativo" data-ng-disabled="true">
+                </checkbox>
+            </td>
+            <td>
+                <a href="#/contratantes/edit/{{contratante._id}}"><i class="glyphicon glyphicon-pencil"></i></a>
+                <a data-ng-click="vm.remover(contratante)"><i class="glyphicon glyphicon-minus"></i></a>
+            </td>
+        </tr>
+    </table>
+</div>

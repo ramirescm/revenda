@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h3>{{vm.titulo}}</h3>
+    <p>
+        <a class="btn btn-success" href="#/ramosatividades/new" role="button">Novo ramo atividade</a>
+    </p>
+    <table class="table table-striped table-hover table-responsive">
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th></th>
+        </tr>
+        <tr data-ng-repeat="ramoatividade in vm.ramosatividades">
+            <td>{{ramoatividade.nome}}</td>
+            <td>{{ramoatividade.descricao}}</td>
+            <td>
+                <a href="#/ramosatividades/edit/{{ramoatividade._id}}"><i class="glyphicon glyphicon-pencil"></i></a>
+                <!--<a data-ng-click="vm.remover(ramoatividade)"><i class="glyphicon glyphicon-minus"></i></a>-->
+                <a ng-really-message="Are you sure ?" ng-really-click="vm.remover(ramoatividade)" item="item">Delete</a>
+            </td>
+        </tr>
+    </table>
+
+    <minha-modal show="show" title="Minha Modal" confirm-action="clicouBotaoSim()" cancel-action="clicouBotaoNao()">
+        Deseja realmente excluir?
+    </minha-modal>
+</div>

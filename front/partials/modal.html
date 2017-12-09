@@ -1,0 +1,37 @@
+<div class='ng-modal' ng-show='show'>
+
+  <div class='ng-modal-overlay' ng-click='cancelAction()'></div>
+
+  <div class='ng-modal-dialog' ng-style='dialogStyle'>
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="cancelAction()">&times;</button>
+        <h3 class="modal-title">{{title}}</h3>
+      </div>
+
+      <div class="modal-body">
+        <p ng-transclude></p>
+      </div>
+
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-6 col-xs-6">
+            <button type="button" ng-click="confirmAction()" class="btn btn-success col-md-4 col-xs-6">
+                            Sim
+                        </button>
+          </div>
+          <div class="col-md-6 col-xs-6">
+            <button type="button" ng-click="cancelAction()" class="btn btn-danger col-md-4 col-xs-6 col-md-offset-8 col-xs-offset-6">
+                            Não
+                        </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <h3>{{vm.titulo}}</h3>
+    <p>
+        <a class="btn btn-success" href="#/produtos/new" role="button">Novo produto</a>
+    </p>
+    <table class="table table-striped table-hover table-responsive">
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th></th>
+        </tr>
+        <tr data-ng-repeat="produto in vm.produtos">
+            <td>{{produto.nome}}</td>
+            <td>{{produto.descricao}}</td>
+            <td>{{produto.valor}}</td>
+            <td>
+                <a href="#/produtos/edit/{{produto._id}}"><i class="glyphicon glyphicon-pencil"></i></a>
+                <a data-ng-click="vm.remover(produto)"><i class="glyphicon glyphicon-minus"></i></a>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,4 +1,4 @@
-# Protótipo de sistema para revenda de veículos para estudo de angularjs e node
+# Revenda de veículos
 
 Tecnologias 
 - Angular (frontend)
